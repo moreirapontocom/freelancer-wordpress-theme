@@ -25,6 +25,7 @@ while ( have_posts() ) : the_post(); ?>
                 <?php
                 $meta_label = get_post_meta( get_the_ID(), 'button_label' );
                 $meta_link = get_post_meta( get_the_ID(), 'button_link' );
+                $meta_where = get_post_meta( get_the_ID(), 'location' );
                 ?>
 
                 <div class="col-lg-8 mx-auto text-center">
@@ -33,7 +34,15 @@ while ( have_posts() ) : the_post(); ?>
                         <?php echo $meta_label[0] ?>
                     </a>
                 </div>
+
             </div>
+
+            <br><br>
+
+            <center>
+                <i class="fa fa-map-marker"></i> Current Location: <strong><?php echo $meta_where[0]; ?></strong>
+            </center>
+
         </div>
     </section>
 

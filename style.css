@@ -46,6 +46,15 @@ hr.star-primary {
   border: none;
   border-top: solid 5px; }
 
+hr.star-primary.star-small {
+  max-width: 190px;
+  margin: 25px auto 30px;
+  padding: 0;
+  text-align: center;
+  border: none;
+  border-top: solid 3px;
+  color: #eeeeee; }
+
 hr.star-light:after,
 hr.star-primary:after {
   font-family: FontAwesome;
@@ -68,6 +77,13 @@ hr.star-primary {
 
 hr.star-primary:after {
   color: #2c3e50;
+  background-color: white; }
+
+hr.star-primary.star-small {
+  border-color: #eeeeee; }
+
+hr.star-primary.star-small:after {
+  color: #eeeeee;
   background-color: white; }
 
 .img-centered {
@@ -191,6 +207,20 @@ header.masthead {
       font-size: 4.75em; }
     header.masthead .intro-text .skills {
       font-size: 1.75em; } }
+
+#portfolio .skills .col {
+  margin-bottom: 20px; }
+  #portfolio .skills .col img {
+    max-width: 100%;
+    opacity: .6;
+    -moz-opacity: .6;
+    transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out; }
+    #portfolio .skills .col img:hover {
+      opacity: 1;
+      -moz-opacity: 1;
+      transition: all .2s ease-in-out;
+      -moz-transition: all .2s ease-in-out; }
 
 #portfolio .portfolio-item {
   right: 0;

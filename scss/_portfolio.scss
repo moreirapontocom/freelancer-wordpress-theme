@@ -1,5 +1,24 @@
 // Styling for the portfolio section
 #portfolio {
+  .skills {
+    .col {
+      margin-bottom: 20px;
+      img {
+        max-width: 100%;
+        opacity: .6;
+        -moz-opacity: .6;
+        transition: all .2s ease-in-out;
+        -moz-transition: all .2s ease-in-out;
+        &:hover {
+          opacity: 1;
+          -moz-opacity: 1;
+          transition: all .2s ease-in-out;
+          -moz-transition: all .2s ease-in-out;
+        }
+      }
+    }
+  }
+
   .portfolio-item {
     right: 0;
     margin: 0 0 15px;

@@ -56,6 +56,28 @@ function create_posttype() {
         )
     );
 
+    register_post_type('stack',
+    array(
+        'labels' => array(
+            'name' => __( 'Stack' ),
+            'singular_name' => __( 'Stack' ),
+
+            'add_new_item' => __( 'New Item' ),
+            'add_new' => __( 'New' ),
+            'edit_item' => __( 'Edit Item' )
+
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'hierarchical' => true,
+        'rewrite' => array('slug' => 'skills'),
+        'supports' => array(
+            'title',
+            'thumbnail'
+        ),
+    )
+);
+
 }
 add_action('init','create_posttype');
 

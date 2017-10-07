@@ -40,6 +40,15 @@ hr.star-primary {
   border: none;
   border-top: solid 5px;
 }
+hr.star-primary.star-small {
+  max-width: 190px;
+  margin: 25px auto 30px;
+  padding: 0;
+  text-align: center;
+  border: none;
+  border-top: solid 3px;
+  color: $gray-lighter;
+}
 hr.star-light:after,
 hr.star-primary:after {
   font-family: FontAwesome;
@@ -64,6 +73,15 @@ hr.star-primary {
 }
 hr.star-primary:after {
   color: $theme-primary;
+  background-color: white;
+}
+
+
+hr.star-primary.star-small {
+  border-color: $gray-lighter;
+}
+hr.star-primary.star-small:after {
+  color: $gray-lighter;
   background-color: white;
 }
 
