@@ -129,3 +129,12 @@ section.success {
     }
   }
 }
+
+footer {
+  text-align: center;
+  color: $gray-light !important;
+  margin-bottom: 50px;
+  a,a:link {
+    color: $theme-success;
+  }
+}

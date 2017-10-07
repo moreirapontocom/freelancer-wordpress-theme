@@ -122,6 +122,13 @@ section.success {
     .scroll-top .btn:focus {
       outline: none; }
 
+footer {
+  text-align: center;
+  color: #777777 !important;
+  margin-bottom: 50px; }
+  footer a, footer a:link {
+    color: #2980b9; }
+
 #mainNav {
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;

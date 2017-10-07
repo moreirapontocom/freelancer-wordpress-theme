@@ -5,6 +5,11 @@
         </a>
     </div>
 
+    <footer>
+        Designed by <a href="https://startbootstrap.com/?utm_source=lucasmoreira.com.br" target="_blank">Start Bootstrap</a>.<br>
+        This Wordpress theme is available on <a href="https://github.com/moreirapontocom/freelancer-wordpress-theme" target="_blank">my Github</a>.
+    </footer>
+
     <?php wp_footer() ?>
 
 </body>
