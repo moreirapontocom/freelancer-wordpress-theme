@@ -52,5 +52,35 @@
 					<hr class="star-light">
 					<span class="skills"><?php echo get_the_excerpt( $page_home ) ?></span>
 				</div>
+
+				<br><br>
+
+				<?php query_posts( 'post_type=page&pagename=home' ); ?>
+				<?php if ( have_posts() ) : ?>
+
+					<ul class="social">
+						<?php while ( have_posts() ) : the_post(); ?>
+							<?php
+							$meta_social = get_post_meta( get_the_ID() );
+							$total_custom_fields = count($meta_social);
+
+							foreach ( $meta_social as $key => $item ) :
+								if ( substr($key, 0, 7) == 'social_' ) : ?>
+									<?php
+									$size = strlen($key);
+									$icon = str_replace('social_', '', $key);
+									?>
+									<li>
+										<a href="<?php echo $item[0]; ?>" target="_blank">
+											<i class="fa fa-<?php echo $icon; ?>"></i>
+										</a>
+									</li>
+								<?php endif;
+							endforeach; ?>
+						<?php endwhile; wp_reset_query(); ?>
+					</ul>
+
+				<?php endif; ?>
+
 			</div>
 		</header>

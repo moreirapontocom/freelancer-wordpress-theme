@@ -25,7 +25,8 @@ add_post_type_support( 'page', 'excerpt' );
 
 function custom_theme_setup() {
     add_theme_support('post-thumbnails');
-	add_image_size( 'cover', 350, 253, true );
+    add_image_size( 'portfolio', 350, 253, true );
+    add_image_size( 'stack', 350, 200, true );
 }
 add_action( 'after_setup_theme', 'custom_theme_setup' );
 
