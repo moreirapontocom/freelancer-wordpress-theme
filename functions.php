@@ -16,14 +16,15 @@ function my_queue() {
 }
 add_action( 'wp_enqueue_scripts', 'my_queue' );
 
-function remove_posts_menu() {
-    remove_menu_page('edit.php?post_type=page');
-}
-add_action('admin_init', 'remove_posts_menu');
+// function remove_posts_menu() {
+//     remove_menu_page('edit.php?post_type=page');
+// }
+// add_action('admin_init', 'remove_posts_menu');
 
+add_post_type_support( 'page', 'excerpt' );
 
 function custom_theme_setup() {
-	add_theme_support('post-thumbnails');
+    add_theme_support('post-thumbnails');
 	add_image_size( 'cover', 350, 253, true );
 }
 add_action( 'after_setup_theme', 'custom_theme_setup' );

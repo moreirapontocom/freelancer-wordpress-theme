@@ -1,8 +1,12 @@
 <!-- Contact Section -->
 
+<?php
+query_posts( 'post_type=page&pagename=contact' );
+while ( have_posts() ) : the_post(); ?>
+
 <section id="contact">
     <div class="container">
-        <h2 class="text-center">Contact Me</h2>
+        <h2 class="text-center"><?php echo get_the_title() ?></h2>
 
         <hr class="star-primary">
 
@@ -54,3 +58,5 @@
         </div>
     </div>
 </section>
+
+<?php endwhile; wp_reset_query(); ?>

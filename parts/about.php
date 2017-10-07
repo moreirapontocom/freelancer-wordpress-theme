@@ -1,24 +1,40 @@
 <!-- About Section -->
 
-<section class="success" id="about">
-    <div class="container">
-        <h2 class="text-center">About</h2>
+<?php
+query_posts( 'post_type=page&pagename=about' );
+while ( have_posts() ) : the_post(); ?>
 
-        <hr class="star-light">
+    <section class="success" id="about">
+        <div class="container">
+            <h2 class="text-center"><?php echo get_the_title() ?></h2>
 
-        <div class="row">
-            <div class="col-lg-4 ml-auto">
-                <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
-            </div>
-            <div class="col-lg-4 mr-auto">
-                <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
-            </div>
-            <div class="col-lg-8 mx-auto text-center">
-                <a href="#" class="btn btn-lg btn-outline">
-                    <i class="fa fa-download"></i>
-                    Download Theme
-                </a>
+            <hr class="star-light">
+
+            <div class="row">
+                <div class="col-lg-4 ml-auto">
+                    <p>
+                        <?php echo get_the_excerpt() ?>
+                    </p>
+                </div>
+                <div class="col-lg-4 mr-auto">
+                    <p>
+                        <?php echo get_the_content() ?>
+                    </p>
+                </div>
+
+                <?php
+                $meta_label = get_post_meta( get_the_ID(), 'button_label' );
+                $meta_link = get_post_meta( get_the_ID(), 'button_link' );
+                ?>
+
+                <div class="col-lg-8 mx-auto text-center">
+                    <a href="<?php echo $meta_link[0] ?>" class="btn btn-lg btn-outline" target="_blank">
+                        <i class="fa fa-download"></i>
+                        <?php echo $meta_label[0] ?>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+<?php endwhile; wp_reset_query(); ?>

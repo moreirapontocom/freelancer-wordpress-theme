@@ -3,7 +3,7 @@
 	<!-- Portfolio Grid Section -->
 	<section id="portfolio">
 		<div class="container">
-			<h2 class="text-center">Portfolio</h2>
+			<h2 class="text-center"><?php echo get_the_title( $page_portfolio ) ?></h2>
 
 			<hr class="star-primary">
 
