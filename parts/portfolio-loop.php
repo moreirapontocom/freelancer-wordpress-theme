@@ -25,6 +25,9 @@ while ( have_posts() ) :
                         <div class="row">
                             <div class="col-lg-8 mx-auto">
                                 <div class="modal-body">
+
+                                    <img class="img-fluid" src="<?php the_post_thumbnail_url('full') ?>" alt="">
+
                                     <h2><?php echo get_the_title() ?></h2>
 
                                     <hr class="star-primary">
