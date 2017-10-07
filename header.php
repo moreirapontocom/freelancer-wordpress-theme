@@ -77,10 +77,11 @@
 									</li>
 								<?php endif;
 							endforeach; ?>
-						<?php endwhile; wp_reset_query(); ?>
+						<?php endwhile; ?>
 					</ul>
 
 				<?php endif; ?>
+				<?php wp_reset_query(); ?>
 
 			</div>
 		</header>

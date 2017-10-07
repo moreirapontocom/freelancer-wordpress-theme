@@ -2,7 +2,7 @@
 while ( have_posts() ) :
     the_post(); ?>
 
-        <div class="col-sm-4 portfolio-item">
+        <div class="col-sm-3 portfolio-item">
             <a class="portfolio-link" href="#portfolioModal<?php echo get_the_ID() ?>" data-toggle="modal">
                 <div class="caption">
                     <div class="caption-content">
@@ -12,6 +12,21 @@ while ( have_posts() ) :
                 <img class="img-fluid" src="<?php the_post_thumbnail_url('full') ?>" alt="">
             </a>
         </div>
+
+        <?php for ( $i=0;$i<10;++$i ) : ?>
+
+        <div class="col-sm-3 portfolio-item">
+            <a class="portfolio-link" href="#portfolioModal<?php echo get_the_ID() ?>" data-toggle="modal">
+                <div class="caption">
+                    <div class="caption-content">
+                        <i class="fa fa-search-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img class="img-fluid" src="<?php the_post_thumbnail_url('full') ?>" alt="">
+            </a>
+        </div>
+
+        <?php endfor; ?>
 
         <div class="portfolio-modal modal fade" id="portfolioModal<?php echo get_the_ID() ?>" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">

@@ -10,6 +10,8 @@ while ( have_posts() ) : the_post(); ?>
 
             <hr class="star-light">
 
+            <br><br>
+
             <div class="row">
                 <div class="col-lg-4 ml-auto">
                     <p>
@@ -21,6 +23,8 @@ while ( have_posts() ) : the_post(); ?>
                         <?php echo get_the_content() ?>
                     </p>
                 </div>
+
+                <div style="margin-bottom: 50px;width: 100%;clear: both;"></div>
 
                 <?php
                 $meta_label = get_post_meta( get_the_ID(), 'button_label' );

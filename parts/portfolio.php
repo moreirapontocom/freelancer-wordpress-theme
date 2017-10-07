@@ -1,26 +1,30 @@
+<?php $page_portfolio = get_page_by_path( 'portfolio' ); ?>
+
 <!-- Portfolio Grid Section -->
 <section id="portfolio">
+
     <div class="container">
+
+        <?php
+        $query_args = array(
+            'post_type' => 'portfolio',
+            'posts_per_page' => get_option( 'posts_per_page' ),
+            'orderby' => 'date',
+            'paged' => ( ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1 )
+        );
+        query_posts( $query_args ); ?>
+
         <h2 class="text-center"><?php echo get_the_title( $page_portfolio ) ?></h2>
 
         <hr class="star-primary">
 
+        <br><br>
+
         <div class="row">
-
-            <?php
-            $query_args = array(
-                'post_type' => 'portfolio',
-                'posts_per_page' => get_option( 'posts_per_page' ),
-                'orderby' => 'date',
-                'paged' => ( ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1 )
-            );
-            query_posts( $query_args );
-
-            get_template_part('parts/portfolio-loop');
-
-            wp_reset_query(); ?>
-
+            <?php get_template_part('parts/portfolio-loop'); ?>
         </div>
+
+        <?php wp_reset_query(); ?>
 
         <br>
 

@@ -26,7 +26,6 @@ To display all contents correctly, you should create the following pages and its
 * Custom fields:
     * _button_label_
     * _button_link_
-    * _input_name_
     * _location_
 
 ### Portfolio
