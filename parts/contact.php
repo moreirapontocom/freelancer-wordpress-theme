@@ -16,6 +16,7 @@ while ( have_posts() ) : the_post(); ?>
             $meta_phone = get_post_meta( get_the_ID(), 'input_phone' );
             $meta_message = get_post_meta( get_the_ID(), 'textarea_message' );
             $meta_button = get_post_meta( get_the_ID(), 'button_label' );
+            $meta_ga = get_post_meta( get_the_ID(), 'ga_tracking_id' );
             ?>
 
             <div class="row">
@@ -66,5 +67,17 @@ while ( have_posts() ) : the_post(); ?>
             </div>
         </div>
     </section>
+
+    <?php if ( isset($meta_ga[0]) && !empty($meta_ga[0]) ) : ?>
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-21832901-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '<?php echo $meta_ga[0] ?>');
+        </script>
+
+    <?php endif; ?>
 
 <?php endwhile; wp_reset_query(); ?>
