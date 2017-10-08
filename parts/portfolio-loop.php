@@ -2,7 +2,7 @@
 while ( have_posts() ) :
     the_post(); ?>
 
-        <div class="col-sm-3 portfolio-item">
+        <div class="col-sm-4 portfolio-item">
             <a class="portfolio-link" href="#portfolioModal<?php echo get_the_ID() ?>" data-toggle="modal">
                 <div class="caption">
                     <div class="caption-content">
