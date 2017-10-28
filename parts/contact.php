@@ -25,6 +25,11 @@ while ( have_posts() ) : the_post(); ?>
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
                     <form name="sentMessage" id="contactForm" novalidate>
+
+                        <div id="js-contact-post-url" style="display: none;">
+                            <?php echo get_template_directory_uri().'/mail/contact_me.php' ?>
+                        </div>
+
                         <div class="control-group">
                             <div class="form-group floating-label-form-group controls">
                                 <label><?php echo $meta_name[0] ?></label>
