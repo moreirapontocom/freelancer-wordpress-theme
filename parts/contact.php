@@ -11,19 +11,24 @@ while ( have_posts() ) : the_post(); ?>
             <hr class="star-primary">
 
             <?php
-            $meta_name = get_post_meta( get_the_ID(), 'input_name' );
-            $meta_email = get_post_meta( get_the_ID(), 'input_email' );
-            $meta_phone = get_post_meta( get_the_ID(), 'input_phone' );
-            $meta_message = get_post_meta( get_the_ID(), 'textarea_message' );
-            $meta_button = get_post_meta( get_the_ID(), 'button_label' );
+            // $meta_name = get_post_meta( get_the_ID(), 'input_name' );
+            // $meta_email = get_post_meta( get_the_ID(), 'input_email' );
+            // $meta_phone = get_post_meta( get_the_ID(), 'input_phone' );
+            // $meta_message = get_post_meta( get_the_ID(), 'textarea_message' );
+            // $meta_button = get_post_meta( get_the_ID(), 'button_label' );
             $meta_ga = get_post_meta( get_the_ID(), 'ga_tracking_id' );
             ?>
 
             <div class="row">
-                <div class="col-lg-8 mx-auto">
+                <div class="col-lg-8 mx-auto text-center">
+
+                    <br>
+
+                    <?php echo get_the_content() ?>
 
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+                    <!--
                     <form name="sentMessage" id="contactForm" novalidate>
 
                         <div id="js-contact-post-url" style="display: none;">
@@ -67,6 +72,7 @@ while ( have_posts() ) : the_post(); ?>
                             <button type="submit" class="btn btn-success btn-lg" id="sendMessageButton"><?php echo $meta_button[0] ?></button>
                         </div>
                     </form>
+                    -->
 
                 </div>
             </div>
